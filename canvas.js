@@ -6,8 +6,10 @@ var canvasElement;
 var drawingContext;
 var pattern;
 
-var canvasWidth = 900;
-var canvasHeight = 900;
+var canvasWidth = 700;
+var canvasHeight = 700;
+var centerX = canvasWidth/2;
+var centerY = canvasHeight/2;
 var fitFactor = 180;
 var widthFactor = canvasWidth/fitFactor;
 var heightFactor = canvasHeight/fitFactor;
@@ -25,7 +27,6 @@ var sixthArtist = $("#6link").text();
 
 console.log(startingArtist);
 
-//var startingImage = $("#0image");
 var startingImage = new Image();
 startingImage.src = $("#0image").attr("src");
 var firstImage = new Image();
@@ -70,12 +71,17 @@ function addCanvas () {
 	canvasElement.width = canvasWidth;
 	canvasElement.height = canvasHeight;
 	context = canvasElement.getContext("2d");
-	var centerX = canvasWidth/2;
-	var centerY = canvasHeight/2;
-	context.beginPath();
-	context.arc(centerX,centerY,400,0,Math.PI*2,false);
-	context.fillStyle = "#999";
-	context.fill();	
+	// supposed to make the whole canvas circular and colored. not working
+	// context.beginPath();
+	// context.arc(centerX,centerY,400,0,Math.PI*2,false);
+	// context.fillStyle = "#999";
+	// context.fill();	
+	var grad = context.createRadialGradient(centerX,centerY,0,centerX,centerY,450);
+	grad.addColorStop(0,"475c78");
+	grad.addColorStop(.9,"003551")
+	grad.addColorStop(1,"002541");
+	context.fillStyle = grad;
+	context.fillRect(0,0,canvasWidth,canvasHeight);
 }
 
 function drawGrid () {
@@ -90,9 +96,12 @@ function drawGrid () {
  	  context.moveTo(0, y);
   	  context.lineTo(canvasHeight, y);
 	}
-
+//475c78
 	context.lineWidth = 1;
-	context.strokeStyle = "eee";
+	gridGradient = context.createRadialGradient(centerX,centerY,0,centerX,centerY,450);
+	gridGradient.addColorStop(1,"rgba(10,20,30,.1)");
+	gridGradient.addColorStop(0,"rgba(20,30,45,.3)");
+	context.strokeStyle = gridGradient;
 	context.stroke();
 
 }
@@ -115,14 +124,14 @@ function drawHexagon () {
 	context.moveTo(sixthPointX,sixthPointY);
 	context.lineTo(firstPointX,firstPointY);
 	context.lineWidth = 4;
-	context.strokeStyle = "#ccc";
+	context.strokeStyle = "#aaa";
 	context.stroke();
 	context.closePath();
 }
 
 function writeText (artist, x, y) {
 
-	context.font = "22px Helvetica Neue, Arial";
+	context.font = "20px Helvetica Neue, Arial";
 	if(artist.length < 6) {
 		context.font = "32px Helvetica Neue, Arial";
 	}
@@ -130,7 +139,7 @@ function writeText (artist, x, y) {
 		context.font = "28px Helvetica Neue, Arial";
 	}
 	if(artist.length > 20) {
-		context.font = "16px Helvetica Neue, Arial";
+		context.font = "14px Helvetica Neue, Arial";
 	}
 	context.textBaseline = "middle";
 	context.textAlign = "center";
@@ -142,7 +151,6 @@ function writeText (artist, x, y) {
 	context.shadowBlur = 5;
 	context.fillStyle = "#F6F4F4";
 	context.fillText(artist, x, y+offset)
-
 }
 
 function runner () {
@@ -171,7 +179,7 @@ function runner () {
 		context.drawImage(startingImage, startingPointX-(20*widthFactor), startingPointY-(20*heightFactor),40*widthFactor,40*heightFactor);
 		writeText(startingArtist, startingPointX, startingPointY);
 		context.restore();
-		context.shadowColor = "#CCC";
+		context.shadowColor = "#111";
 		context.shadowOffsetX = 0;
 		context.shadowOffsetY = 0;
 		context.shadowBlur = 4;
