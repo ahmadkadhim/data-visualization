@@ -2,6 +2,7 @@ require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
 
+
 relations = []
 relations_pics = []
 puts "ENTER A NAME"
@@ -36,7 +37,3 @@ File.open('artists.txt', 'w') do |f|
 		end
 	f.write("#{relations}\n")
 end
-
-
-
-	

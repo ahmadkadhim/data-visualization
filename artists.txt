@@ -1,15 +1,1 @@
-Eminem
-http://userserve-ak.last.fm/serve/126s/33623311.png
-D12
-http://userserve-ak.last.fm/serve/126s/154001.jpg
-Bad Meets Evil
-http://userserve-ak.last.fm/serve/126s/63990093.jpg
-Stat Quo
-http://userserve-ak.last.fm/serve/126s/29698783.jpg
-Ca$his
-http://userserve-ak.last.fm/serve/126s/30493005.jpg
-50 Cent
-http://userserve-ak.last.fm/serve/126s/32353091.png
-Obie Trice
-http://userserve-ak.last.fm/serve/126s/35658625.png
-
+["A$AP Rocky\n", "http://userserve-ak.last.fm/serve/126s/90380377.png\n", "Kendrick Lamar\n", "http://userserve-ak.last.fm/serve/126s/83533621.png\n", "A$AP Mob\n", "http://userserve-ak.last.fm/serve/126s/81453725.png\n", "ScHoolboy Q\n", "http://userserve-ak.last.fm/serve/126s/72512916.png\n", "Flatbush Zombies\n", "http://userserve-ak.last.fm/serve/126s/73924046.png\n", "Chief Keef\n", "http://userserve-ak.last.fm/serve/126s/82289261.png\n", "Pusha T\n", "http://userserve-ak.last.fm/serve/126s/88071013.png\n"]

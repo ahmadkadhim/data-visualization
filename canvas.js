@@ -6,16 +6,14 @@ var canvasElement;
 var drawingContext;
 var pattern;
 
-var canvasWidth = 700;
-var canvasHeight = 700;
+var canvasWidth = 800;
+var canvasHeight = 800;
 var centerX = canvasWidth/2;
 var centerY = canvasHeight/2;
 var fitFactor = 180;
 var widthFactor = canvasWidth/fitFactor;
 var heightFactor = canvasHeight/fitFactor;
 var hexagonBoxSide = 100*widthFactor;
-
-console.log(startingArtist)
 
 var startingArtist = $("#0link").text();
 var firstArtist = $("#1link").text();
@@ -24,8 +22,6 @@ var thirdArtist = $("#3link").text();
 var fourthArtist = $("#4link").text();
 var fifthArtist = $("#5link").text();
 var sixthArtist = $("#6link").text();
-
-console.log(startingArtist);
 
 var startingImage = new Image();
 startingImage.src = $("#0image").attr("src");
@@ -96,7 +92,7 @@ function drawGrid () {
  	  context.moveTo(0, y);
   	  context.lineTo(canvasHeight, y);
 	}
-//475c78
+
 	context.lineWidth = 1;
 	gridGradient = context.createRadialGradient(centerX,centerY,0,centerX,centerY,450);
 	gridGradient.addColorStop(1,"rgba(10,20,30,.1)");
