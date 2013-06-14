@@ -1,0 +1,13 @@
+
+img {
+	border-radius: 75px;
+}
+
+.artists, .link {
+	display:none;
+}
+
+.artists {
+	font-weight: bold;
+	color:white;
+}
